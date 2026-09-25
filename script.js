@@ -1,13 +1,5 @@
-// =====================================================
-// ISLA TOURS PH — script.js
-// Shared across all pages
-// =====================================================
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  // -----------------------------------------------
-  // Feature: Mobile nav toggle (hamburger menu)
-  // -----------------------------------------------
   const navToggle = document.getElementById("navToggle");
   const mainNav = document.getElementById("mainNav");
 
@@ -20,10 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // -----------------------------------------------
-  // Feature: Highlight the active nav link
-  // based on the current page filename
-  // -----------------------------------------------
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll("nav.main-nav a").forEach(link => {
     const linkPage = link.getAttribute("href");
@@ -32,9 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // -----------------------------------------------
-  // Feature: Hero image slideshow (home page)
-  // -----------------------------------------------
   const slides = document.querySelectorAll(".hero-slide");
   if (slides.length > 1) {
     let currentSlide = 0;
@@ -45,15 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4500);
   }
 
-  // -----------------------------------------------
-  // Feature: FAQ accordion (contact / tours pages)
-  // -----------------------------------------------
   document.querySelectorAll(".faq-question").forEach(btn => {
     btn.addEventListener("click", () => {
       const item = btn.closest(".faq-item");
       const wasOpen = item.classList.contains("open");
 
-      // close all other open items for a clean accordion effect
       document.querySelectorAll(".faq-item.open").forEach(openItem => {
         if (openItem !== item) openItem.classList.remove("open");
       });
@@ -63,9 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // -----------------------------------------------
-  // Feature: Tour package filter (tours page)
-  // -----------------------------------------------
   const filterButtons = document.querySelectorAll(".filter-btn");
   const tourCards = document.querySelectorAll(".tour-card");
 
@@ -89,9 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // -----------------------------------------------
-  // Feature: Contact form validation
-  // -----------------------------------------------
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
@@ -104,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const destField = document.getElementById("destination");
       const messageField = document.getElementById("message");
 
-      // Name check
       if (nameField.value.trim().length < 2) {
         setFieldError(nameField, true);
         isValid = false;
@@ -112,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setFieldError(nameField, false);
       }
 
-      // Email check
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(emailField.value.trim())) {
         setFieldError(emailField, true);
@@ -121,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setFieldError(emailField, false);
       }
 
-      // Destination dropdown check
       if (!destField.value) {
         setFieldError(destField, true);
         isValid = false;
@@ -129,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setFieldError(destField, false);
       }
 
-      // Message check
       if (messageField.value.trim().length < 10) {
         setFieldError(messageField, true);
         isValid = false;
@@ -156,9 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapper.classList.toggle("invalid", hasError);
   }
 
-  // -----------------------------------------------
-  // Feature: Set current year in footer
-  // -----------------------------------------------
   const yearSpan = document.getElementById("year");
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
