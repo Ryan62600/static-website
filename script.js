@@ -20,6 +20,58 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const liveClockEl = document.getElementById("liveClock");
+
+  function updateLiveClock() {
+    if (!liveClockEl) return;
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+    const ampm = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    const hoursStr = String(hours).padStart(2, "0");
+
+    liveClockEl.textContent = `${hoursStr}:${minutes}:${seconds} ${ampm}`;
+  }
+
+  if (liveClockEl) {
+    updateLiveClock();
+    setInterval(updateLiveClock, 1000);
+  }
+
+  const countdownEl = document.getElementById("countdownDisplay");
+
+  if (countdownEl) {
+    const eventDate = new Date("September 26, 2027 09:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        countdownEl.textContent = "The festival has started! 🏄";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.textContent =
+        `${String(days).padStart(2, "0")} Days | ` +
+        `${String(hours).padStart(2, "0")} Hours | ` +
+        `${String(minutes).padStart(2, "0")} Minutes | ` +
+        `${String(seconds).padStart(2, "0")} Seconds`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
   const slides = document.querySelectorAll(".hero-slide");
   if (slides.length > 1) {
     let currentSlide = 0;
