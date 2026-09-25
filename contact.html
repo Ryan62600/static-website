@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Isla Tours PH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="brand">Isla <span>Tours</span> PH</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-label="Toggle menu">☰</button>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="tours.html">Tour Packages</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="about-hero">
+    <div class="wrap">
+      <h1>Plan Your Trip</h1>
+      <p>Tell us where you want to go — we'll send a custom quote within 24 hours.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="contact-layout">
+
+        <div>
+          <form id="contactForm" novalidate>
+            <div class="field">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="Juan Dela Cruz">
+              <p class="error-text">Please enter your full name (at least 2 characters).</p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="juan@email.com">
+              <p class="error-text">Please enter a valid email address.</p>
+            </div>
+
+            <div class="field">
+              <label for="destination">Destination of Interest</label>
+              <select id="destination" name="destination">
+                <option value="">Select a destination</option>
+                <option value="el-nido">El Nido / Coron, Palawan</option>
+                <option value="siargao">Siargao</option>
+                <option value="bohol">Bohol</option>
+                <option value="boracay">Boracay</option>
+                <option value="banaue">Banaue Rice Terraces</option>
+                <option value="cebu">Cebu & Oslob</option>
+                <option value="custom">Custom multi-island itinerary</option>
+              </select>
+              <p class="error-text">Please select a destination.</p>
+            </div>
+
+            <div class="field">
+              <label for="message">Tell us about your trip</label>
+              <textarea id="message" name="message" rows="5" placeholder="Number of travelers, preferred dates, budget range, etc."></textarea>
+              <p class="error-text">Please share a few more details (at least 10 characters).</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Inquiry</button>
+            <div id="formStatus"></div>
+          </form>
+        </div>
+
+        <div>
+          <div class="info-box">
+            <h3>Reach us directly</h3>
+            <div class="info-line">Email: hello@islatoursph.com</div>
+            <div class="info-line">Phone / WhatsApp: +63 917 123 4567</div>
+            <div class="info-line">Office: Rizal Ave, Puerto Princesa, Palawan</div>
+            <div class="info-line">Hours: Mon-Sat, 8:00 AM - 6:00 PM (PHT)</div>
+          </div>
+
+          <div style="margin-top:30px;">
+            <h3 style="margin-bottom:10px;">Follow the trips</h3>
+            <p>See recent tours and traveler photos on our <a href="https://www.instagram.com" target="_blank">Instagram</a> and <a href="https://www.facebook.com" target="_blank">Facebook</a> pages.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="grid">
+        <div>
+          <h4>Isla Tours PH</h4>
+          <p>Locally-run island tours across the Philippines since 2012.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="tours.html">Tour Packages</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@islatoursph.com">hello@islatoursph.com</a></li>
+            <li><a href="tel:+639171234567">+63 917 123 4567</a></li>
+            <li>Puerto Princesa, Palawan</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year"></span> Isla Tours PH. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
