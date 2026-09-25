@@ -43,7 +43,6 @@ img { max-width: 100%; display: block; }
   padding: 0 24px;
 }
 
-/* ===== HEADER & NAV ===== */
 .site-header {
   background-color: var(--ocean);
   color: var(--white);
@@ -103,7 +102,6 @@ nav.main-nav a.active {
   background-color: rgba(255,255,255,0.15);
 }
 
-/* ===== HERO ===== */
 .hero {
   position: relative;
   color: var(--white);
@@ -159,7 +157,6 @@ nav.main-nav a.active {
   max-width: 50ch;
 }
 
-/* ===== BUTTONS / LINKS ===== */
 .btn {
   display: inline-block;
   padding: 13px 28px;
@@ -194,7 +191,6 @@ nav.main-nav a.active {
 
 .btn-dark:hover { background-color: var(--ocean-dark); }
 
-/* ===== SECTIONS ===== */
 section { padding: 70px 0; }
 
 .section-head {
@@ -206,7 +202,6 @@ section { padding: 70px 0; }
 
 .alt-bg { background-color: var(--white); }
 
-/* ===== CARD GRID (destinations / tours) ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -237,7 +232,6 @@ section { padding: 70px 0; }
   margin-bottom: 10px;
 }
 
-/* ===== TOUR PACKAGE CARDS ===== */
 .tour-card {
   border: 1px solid var(--line);
   border-radius: 4px;
@@ -277,7 +271,6 @@ section { padding: 70px 0; }
   margin-bottom: 10px;
 }
 
-/* ===== STATS STRIP ===== */
 .stats {
   background-color: var(--ocean-dark);
   color: var(--white);
@@ -294,7 +287,40 @@ section { padding: 70px 0; }
   color: var(--sunset);
 }
 
-/* ===== TESTIMONIALS ===== */
+.clock-countdown {
+  background-color: var(--lagoon);
+  color: var(--white);
+  padding: 40px 0;
+}
+
+.cc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+  text-align: center;
+}
+
+.cc-box {
+  background-color: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
+  padding: 22px;
+}
+
+.cc-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: var(--sunset);
+}
+
+.cc-value {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
 .testimonial-card {
   background-color: var(--sand);
   border-left: 4px solid var(--sunset);
@@ -308,7 +334,6 @@ section { padding: 70px 0; }
   color: var(--ocean-dark);
 }
 
-/* ===== FAQ ACCORDION ===== */
 .faq-item {
   border-bottom: 1px solid var(--line);
 }
@@ -344,7 +369,6 @@ section { padding: 70px 0; }
   padding-bottom: 18px;
 }
 
-/* ===== FORM (Contact) ===== */
 .contact-layout {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -424,7 +448,6 @@ form textarea:focus {
   border-bottom: 1px solid rgba(255,255,255,0.18);
 }
 
-/* ===== ABOUT PAGE ===== */
 .about-hero {
   background-color: var(--ocean);
   color: var(--white);
@@ -458,7 +481,6 @@ form textarea:focus {
   font-size: 0.9rem;
 }
 
-/* ===== FOOTER ===== */
 footer {
   background-color: var(--ocean-dark);
   color: #cfe0e0;
@@ -488,7 +510,6 @@ footer a:hover { color: var(--sunset); }
   color: #9db4b4;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 800px) {
   .tour-card { grid-template-columns: 1fr; }
   .tour-card img { height: 200px; }
